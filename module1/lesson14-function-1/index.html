@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Function</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+</head>
+<body>
+<script>
+    // tham so la optional
+    // function f(x) {
+    //     console.log(x * x);
+    // }
+    //
+    // const ex = 2 + 2;
+    // f(ex);
+
+    // function sum(start, end) {
+    //     if (start === 0 || end === 0) return;
+    //     let sum = 0;
+    //     for (let i = start; i < end; i++) {
+    //         sum += i;
+    //     }
+    //     return sum;
+    // }
+    //
+    // console.log(sum(10, 5))
+    // console.log(sum(5, 10));
+
+    // // Khai bao ham
+    // function isEven(number) {
+    //     console.log(number + " inside function");
+    //     return number % 2 === 0;
+    // }
+    // // console.log(number);
+    // // Goi ham
+    // const e = isEven(9);
+    // console.log(typeof isEven);
+    // // alert(e);
+
+    const a = 10.0;
+    const b = 20.1;
+    console.log(typeof a);
+
+    function swap(a, b) {
+        let temp = a;
+        a = b;
+        b = temp;
+        console.log('a inside function', a);
+        console.log('b inside function', b);
+    }
+    swap(a, b);
+    console.log('a outside function', a);
+    console.log('b outside function', b);
+
+    const arr = [1, 2];
+    function swapArr(arr) {
+        let temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
+    }
+    console.log('truoc khi hoan doi gia tri: ', arr);
+    swapArr(arr);
+    console.log('arr[0] outside function', arr[0]);
+    console.log('arr[1] outside function', arr[1]);
+    console.log('Sau khi hoan doi gia tri: ', arr);
+
+    function loop(length) {
+        for (var i = 0; i < length; i++) {
+            // console.log(i);
+        }
+        {
+            let firstName = 'Anh';
+            console.log(i);
+            {
+                
+            }
+        }
+        console.log(firstName);
+    }
+    loop(10);
+</script>
+</body>
+</html>

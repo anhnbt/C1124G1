@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 12: Array 1</title>
+</head>
+<body>
+<script>
+    // const cars = [10];
+    // const cars = ['BMW', 'Volvo', 'VinFast'];
+    // const cars = [];
+    // cars.push('BMW', 'Volvo', 'VinFast');
+    // const cars = new Array(10);
+    // cars[2] = 'Mazda';
+    // const mazda = cars[2];
+    // console.log(mazda);
+    // console.log(cars);
+    // const greeting = 'Hello World!';
+    // for (const greetingKey in greeting) {
+    //     console.log(greeting[greetingKey]);
+    // }
+    // cars.hello = 'Hello World!';
+    // cars[-1] = 'CodeGym';
+    // for (const car of cars) {
+    //     console.log(car);
+    // }
+    // arrow function ES6
+    // cars.forEach(item => console.log(item));
+    // for (const carsKey in cars) {
+    //     console.log(cars[carsKey]);
+    // }
+    // console.log(cars.length);
+    // console.log(cars[0]);
+    // console.log(cars[1]);
+    // console.log(cars[2]);
+    // cars.push('Mazda');
+    // cars.push('Toyota');
+    // cars.push('KIA');
+    // cars.push('Huyndai');
+    // for (let i = 0; i < cars.length; i++) {
+    //     console.log(cars[i]);
+    // }
+    // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // numbers.description = 'Đây là một mảng số nguyên';
+    // console.log(numbers.description);
+    // numbers.splice(0, 0);
+    // console.log(numbers.length);
+    // for (let i = 0; i < numbers.length; i++) {
+    //     if (numbers[i] % 2 ===0) {
+    //         document.write(numbers[i] + "<br>");
+    //     }
+    // }
+    // const matrix = [
+    //     [1, 2, 3], // 0
+    //     [4, 5, 6], // 1
+    //     [7, 8, 9] // 2
+    // ];
+    // console.log(matrix[2][2]);
+    // console.log(matrix);
+    const matrix = new Array(3);
+    let counter = 1;
+    for (let i = 0; i < matrix.length; i++) {
+        matrix[i] = new Array(3);
+        for (let j = 0; j < matrix[i].length; j++) {
+            matrix[i][j] = counter;
+            counter++;
+        }
+    }
+    // console.log(matrix);
+    let total = 0;
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            total += matrix[i][j];
+        }
+    }
+    const newMatrix = [123].concat(matrix);
+    // console.log(`Total: ${total}`)
+    console.log(newMatrix);
+
+
+</script>
+</body>
+</html>

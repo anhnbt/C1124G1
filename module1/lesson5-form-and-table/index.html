@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input {
+            border: 1px solid blue
+        }
+        button {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<form name="searchForm" action="" method="get">
+<!--    <label>Username:-->
+<!--        <input type="text" name="username" placeholder="" value="">-->
+<!--    </label>-->
+<!--    <label>Password:-->
+<!--        <input type="text" name="pw" placeholder="" value="">-->
+<!--    </label>-->
+<!--&lt;!&ndash;    <input type="submit" value="Login">&ndash;&gt;-->
+<!--    <button type="reset">Reset</button>-->
+    <label for="gender">Giới tính</label>
+    <input type="radio" name="gender" value="M" id="gender" checked> Nam
+    <input type="radio" name="gender" value="F" id="gender1"> Nữ
+    <input type="radio" name="gender" value="unknown" id="gender2"> Unknown
+        <button type="submit" onclick="window.alert('Hello World!');">Login</button>
+
+    <select name="province" id="">
+        <option value="">HN</option>
+        <option value="">HCM</option>
+        <option value="">DN</option>
+    </select><br>
+    <textarea name="status" id="" cols="30" rows="10">dfghjkjgffghjkl;llkjjkkjhghjkjhgjjhjhhj</textarea>
+</form>
+</body>
+</html>
