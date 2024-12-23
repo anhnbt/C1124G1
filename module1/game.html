@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Character Movement</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #character {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div id="character"></div>
+
+<script>
+    const character = document.getElementById("character");
+
+    // Vị trí ban đầu
+    let x = 0; // Trục ngang
+    let y = 0; // Trục dọc
+
+    // Di chuyển nhân vật
+    function moveCharacter(direction) {
+        if (direction === "up") y -= 10;
+        if (direction === "down") y += 10;
+        if (direction === "left") x -= 10;
+        if (direction === "right") x += 10;
+
+        character.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    // Xử lý sự kiện bàn phím
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowUp") {
+            moveCharacter("up");
+        } else if (event.key === "ArrowDown") {
+            moveCharacter("down");
+        } else if (event.key === "ArrowLeft") {
+            moveCharacter("left");
+        } else if (event.key === "ArrowRight") {
+            moveCharacter("right");
+        } else if (event.key === " ") { // Space để nhảy
+            character.style.transition = "transform 0.2s";
+            character.style.transform = `translate(${x}px, ${y - 50}px)`;
+            setTimeout(() => {
+                character.style.transform = `translate(${x}px, ${y}px)`;
+            }, 200);
+        }
+    });
+</script>
+
+</body>
+</html>

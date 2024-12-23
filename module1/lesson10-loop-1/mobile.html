@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+
+Nokia:
+<form action="" onsubmit="nokia.sendMessage(iPhone); return false;">
+    <input type="text"
+           name="message"
+           id="nokiaMessage"
+           onkeyup="nokia.setMessage(this.value)"
+    >
+    <button type="submit">Send message</button>
+</form>
+<button onclick="nokia.readSendMessages()">Xem tin nhắn đã gửi</button>
+<button onclick="console.log(nokia.getEnergy())">Xem PIN</button>
+
+iPhone:
+
+<button onclick="iPhone.readInboxMessages()">Show messages</button>
+
+<script>
+    class Mobile {
+        #energy = 100;
+        #message;
+        #inboxList = [];
+        #sendList = [];
+        #power = true;
+
+        getEnergy() {
+            return this.#energy;
+        }
+
+        getStatus() {
+            return this.#power ? "ON" : "OFF";
+        }
+
+        setStatus(status) {
+            this.#power = status;
+        }
+
+        reCharge() {
+            this.#energy = 100;
+        }
+
+        getMessage() {
+            return this.#message;
+        }
+
+        setMessage(msg) {
+            this.#message = msg;
+            this.#energy--;
+        }
+
+        receiveMessage(mobile) {
+            this.#inboxList.push(mobile.getMessage());
+            this.#energy--;
+        }
+
+        sendMessage(mobile) {
+            mobile.receiveMessage(this);
+            this.#sendList.push(this.#message);
+            this.#energy--;
+        }
+
+        readInboxMessages() {
+            for (let i = 0; i < this.#inboxList.length; i++) {
+                console.log(this.#inboxList[i]);
+            }
+            this.#energy--;
+        }
+
+        readSendMessages() {
+            for (let i = 0; i < this.#sendList.length; i++) {
+                console.log(this.#sendList[i]);
+            }
+            this.#energy--;
+        }
+    }
+
+    const nokia = new Mobile();
+    const iPhone = new Mobile();
+</script>
+</body>
+</html>

@@ -4,71 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Material Design CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
-        /* CSS sẽ được thêm vào đây */
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 1.3;
+            color: #4B6BFB;
+        }
+        .container {
+            width: 1440px;
+            display: grid;
+            grid-template-columns: 662px 778px;
+            padding: 0;
+            margin: 0 auto;
+            max-width: initial;
+        }
+
+        .login-section {
+            padding: 86px;
+            background: #FFFFFF;
+        }
+
+        /* Chỉnh sửa input field outline */
+        .input-field input {
+            border: 1px solid #C1BBBB !important;
+            border-radius: 4px !important;
+            padding: 0 16px !important;
+            box-sizing: border-box !important;
+            height: 56px !important;
+            margin: 0 !important;
+        }
+
+        .input-field input:focus {
+            border: 2px solid #4B6BFB !important;
+            box-shadow: none !important;
+        }
+
+        /* Điều chỉnh label của input */
+        .input-field > label {
+            transform: translateY(-50%);
+            background: white;
+            padding: 0 4px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .input-field input:focus + label {
+            color: #4B6BFB !important;
+            transform: translateY(-130%) scale(0.8);
+        }
+
+        /* CSS khác giữ nguyên */
+        .illustration-section {
+            background: rgba(229, 229, 229, 0.41);
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            color: #4B6BFB;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 48px;
+        }
+
+        .illustration {
+            width: 839px;
+            height: 428px;
+        }
+
+        .illustration img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        nav {
+            background: none;
+            box-shadow: none;
+            position: absolute;
+            top: 86px;
+            right: 86px;
+        }
+
+        nav ul a {
+            color: #666666;
+        }
+
+        nav ul a.active {
+            color: #4B6BFB;
+            border-bottom: 2px solid #4B6BFB;
+        }
+
+        .row {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            text-transform: capitalize;
+        }
+
+        .primary-btn {
+            background: #4B6BFB;
+            width: 100%;
+        }
+
+        .outlined-btn {
+            border: 1px solid #4B6BFB;
+            background: transparent;
+            color: #4B6BFB;
+            width: 100%;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .social-btn {
+            border: 1px solid #E0E0E0;
+            background: white;
+            color: #666666;
+            padding: 8px 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-    <!-- Left Section -->
     <section class="login-section">
         <div class="logo">Digital</div>
 
         <h1>Artificial Intelligence Driving Results For The Travel Industry</h1>
-        <p>Welcome back! Please login to your account.</p>
+        <p class="grey-text">Welcome back! Please login to your account.</p>
 
-        <form>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="hakeem@digital.com">
-            </div>
-
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password">
-            </div>
-
-            <div class="form-options">
-                <label>
-                    <input type="checkbox"> Remember Me
-                </label>
-                <a href="#">Forgot Password?</a>
-            </div>
-
-            <div class="form-buttons">
-                <button type="submit">Login</button>
-                <button type="button" class="signup">Sign Up</button>
-            </div>
-
-            <div class="social-login">
-                <p>Or login with</p>
-                <div class="social-buttons">
-                    <button>Facebook</button>
-                    <button>LinkedIn</button>
-                    <button>Google</button>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email Address</label>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <label>
+                            <input type="checkbox">
+                            <span>Remember Me</span>
+                        </label>
+                    </div>
+                    <div class="col s6 right-align">
+                        <a href="#" class="blue-text">Forgot Password?</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light primary-btn" type="submit">Login</button>
+                    </div>
+                    <div class="col s6">
+                        <button class="btn waves-effect waves-light outlined-btn" type="button">Sign Up</button>
+                    </div>
+                </div>
+
+                <div class="center-align">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn waves-effect">Facebook</a>
+                        <a href="#" class="social-btn waves-effect">LinkedIn</a>
+                        <a href="#" class="social-btn waves-effect">Google</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </section>
 
-    <!-- Right Section -->
     <section class="illustration-section">
-        <!-- Navigation menu -->
         <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Pricing</a></li>
-            </ul>
+            <div class="nav-wrapper">
+                <ul class="right">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+            </div>
         </nav>
 
-        <!-- Illustration -->
         <div class="illustration">
-            <img src="illustration.png" width="100%" alt="">
+            <img src="illustration.png" alt="Cyclist illustration">
         </div>
     </section>
 </div>
+
+<!-- Material Design JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
